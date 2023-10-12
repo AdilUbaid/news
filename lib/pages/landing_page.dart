@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/pages/home.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -39,27 +40,36 @@ class _LandingPageState extends State<LandingPage> {
                     fontSize: 18,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width / 1.2,
-                child: Material(
-                  elevation: 5,
-                  borderRadius: BorderRadius.circular(30),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 1.2,
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(30)),
-                    child: Center(
-                      child: Text(
-                        "Getstarted",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Home(),
+                      ));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  child: Material(
+                    elevation: 5,
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 1.2,
+                      padding: const EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const Center(
+                        child: Text(
+                          "Getstarted",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ),
